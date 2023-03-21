@@ -29,4 +29,9 @@ public class GlobalExceptionHandler {
 		});
 		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler(IllegalArgumentException.class)
+	public ResponseEntity<ApiResponse> illegalArgumentExceptionHandler(IllegalArgumentException e) {
+		return new ResponseEntity<ApiResponse>(new ApiResponse(e.getMessage(), false), HttpStatus.NOT_FOUND);
+	}
 }

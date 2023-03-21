@@ -8,5 +8,4 @@ import com.adityasonani.blog.entities.Category;
 @Repository
 public interface CategoryRepo extends JpaRepository<Category, Integer> {
 	
-
 }
